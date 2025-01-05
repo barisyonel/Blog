@@ -1,8 +1,16 @@
-# React + Vite
+ Blog
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Blog, React.js kullanılarak geliştirilmiş modern ve şık bir blog sitesi. Neon temalı tasarımıyla dikkat çeken bu proje, blog gönderilerini keşfetmek ve paylaşmak için kolay bir platform sağlar.
 
-Currently, two official plugins are available:
+## Özellikler
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Modern Tasarım:** Neon teması ve dikkat çekici görsel öğelerle kullanıcı dostu bir arayüz.
+- **React.js ile Dinamiklik:** React bileşenleri sayesinde hızlı ve esnek bir deneyim.
+- **Kategori Yönetimi:** Blog gönderileri farklı kategorilerde görüntülenebilir.
+- **Responsive Tasarım:** Tüm cihazlarda mükemmel görünüm.
+
+## Kullanılan Teknolojiler
+
+- **React.js:** Kullanıcı arayüzünü oluşturmak için.
+- **CSS:** Neon temalı tasarım ve stil düzenlemeleri.
+- **React Router:** Sayfa yönlendirme ve gezinme için.
