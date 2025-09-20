@@ -1,0 +1,248 @@
+/* Genel Ayarlar */
+.about {
+	padding: 100px 0;
+	background-color: var(--bg-primary);
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.about-container {
+	width: 90%;
+	max-width: 1200px;
+	margin: 0 auto;
+  }
+  
+.greeting {
+	font-size: 1.5rem;
+	color: #ec4899;
+	margin-bottom: 1rem;
+	font-weight: 400;
+}
+
+.name {
+	color: #ec4899;
+	font-weight: 500;
+  }
+  
+  .title {
+	font-size: 3.5rem;
+	color: var(--text-primary);
+	margin-bottom: 2rem;
+	font-weight: 600;
+	letter-spacing: -1px;
+  }
+  
+.title .highlight {
+	color: #4ade80;
+  }
+
+.subtitle {
+	font-size: 1.2rem;
+	color: #60a5fa;
+	margin-bottom: 1.5rem;
+	font-weight: 500;
+	letter-spacing: 0.5px;
+  }
+  
+  .description {
+	font-size: 1.1rem;
+	color: var(--text-secondary);
+	max-width: 800px;
+	margin: 0 auto 3rem;
+	line-height: 1.8;
+	letter-spacing: 0.3px;
+  }
+  
+.description .highlight {
+	color: #4ade80;
+	font-weight: 500;
+  }
+  
+.description .tech {
+	color: #3b82f6;
+	font-weight: 500;
+}
+
+.skills-section {
+	margin-top: 4rem;
+  }
+  
+  .skills-title {
+	font-size: 1.8rem;
+	color: #4ade80;
+	margin-bottom: 2rem;
+	font-weight: 600;
+  }
+  
+.skills-grid {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	justify-content: center;
+  }
+  
+.skill-tag {
+	background: rgba(30, 41, 59, 0.5);
+	padding: 0.75rem 1.5rem;
+	border-radius: 8px;
+	color: var(--text-primary);
+	font-size: 1rem;
+	backdrop-filter: blur(10px);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+	transform: translateY(-3px);
+	background: rgba(30, 41, 59, 0.7);
+	border-color: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+	.about {
+		padding: 60px 0;
+	}
+
+	.title {
+		font-size: 2.5rem;
+	}
+
+	.description {
+		font-size: 1rem;
+		padding: 0 1rem;
+  }
+  
+	.skills-title {
+		font-size: 1.5rem;
+	}
+
+	.skill-tag {
+		padding: 0.5rem 1rem;
+		font-size: 0.9rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.title {
+		font-size: 2rem;
+	}
+
+	.skills-grid {
+		gap: 0.75rem;
+	}
+
+	.skill-tag {
+		padding: 0.5rem 0.75rem;
+		font-size: 0.85rem;
+	}
+  }
+  
+/* Services Overview Styles */
+.services-overview {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.services-overview h3 {
+  color: #60a5fa;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.services-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 0.8rem;
+}
+
+.services-list li {
+  color: #e2e8f0;
+  font-size: 0.95rem;
+  padding: 0.5rem 0;
+  border-left: 3px solid #60a5fa;
+  padding-left: 1rem;
+  background: rgba(96, 165, 250, 0.1);
+  border-radius: 0 8px 8px 0;
+}
+
+/* Why Choose Us Styles */
+.why-choose-us {
+  margin: 3rem 0;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(96, 165, 250, 0.1), rgba(147, 51, 234, 0.1));
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.why-choose-us h3 {
+  color: #60a5fa;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.reason-item {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reason-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.reason-item h4 {
+  color: #60a5fa;
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+}
+
+.reason-item p {
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .services-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .reasons-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .services-overview,
+  .why-choose-us {
+    padding: 1rem;
+  }
+}
+
+.services-title,
+.why-title {
+  font-size: 1.5rem;
+  color: #60a5fa;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+  

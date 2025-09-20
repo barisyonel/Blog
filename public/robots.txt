@@ -1,0 +1,32 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://bariscanyonel.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Disallow admin areas (if any)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+Disallow: /.env
+Disallow: /node_modules/
+
+# Allow important files
+Allow: /favicon.ico
+Allow: /sitemap.xml
+Allow: /robots.txt
+Allow: /logo.jpg
+Allow: /assets/
+
+# Security
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: / 

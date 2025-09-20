@@ -1,0 +1,27 @@
+<IfModule mod_rewrite.c>
+  # Enable the rewrite engine
+  RewriteEngine On
+
+  # ----------------------------------------------------------------------
+  # FORCE HTTPS (SSL)
+  # ----------------------------------------------------------------------
+  # Check if the connection is not already HTTPS
+  RewriteCond %{HTTPS} !=on
+  # Redirect all HTTP traffic to HTTPS
+  RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R=301,L]
+
+  # ----------------------------------------------------------------------
+  # SINGLE PAGE APPLICATION (SPA) ROUTING
+  # ----------------------------------------------------------------------
+  # Set the base path for the application
+  RewriteBase /
+
+  # If the requested file or directory does not exist,
+  # serve the index.html file instead.
+  # This allows React Router to handle the client-side routing.
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-l
+  RewriteRule . /index.html [L]
+
+</IfModule> 
