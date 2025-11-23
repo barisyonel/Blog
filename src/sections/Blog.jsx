@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import SEO from '../components/SEO';
 
 const Blog = () => {
   const { t } = useTranslation();
@@ -14,7 +16,7 @@ const Blog = () => {
       date: "2025-09-20",
       category: "Web Tasarım",
       tags: ["web tasarım", "trendler", "2025", "kullanıcı deneyimi", "modern tasarım"],
-      readTime: "5 dakika",
+      readTime: "12 dakika",
       image: "/assets/blog/web-tasarim-trendleri.jpg"
     },
     {
@@ -26,7 +28,7 @@ const Blog = () => {
       date: "2025-09-19",
       category: "E-Ticaret",
       tags: ["e-ticaret", "tasarım", "dönüşüm", "kullanıcı deneyimi", "satış"],
-      readTime: "7 dakika",
+      readTime: "15 dakika",
       image: "/assets/blog/e-ticaret-tasarim.jpg"
     },
     {
@@ -38,7 +40,7 @@ const Blog = () => {
       date: "2025-09-18",
       category: "SEO",
       tags: ["seo", "google", "arama motoru", "optimizasyon", "organik trafik"],
-      readTime: "8 dakika",
+      readTime: "14 dakika",
       image: "/assets/blog/seo-optimizasyonu.jpg"
     },
     {
@@ -50,7 +52,7 @@ const Blog = () => {
       date: "2025-09-17",
       category: "Responsive Tasarım",
       tags: ["responsive", "mobil", "uyumlu", "tasarım", "kullanıcı deneyimi"],
-      readTime: "6 dakika",
+      readTime: "11 dakika",
       image: "/assets/blog/responsive-tasarim.jpg"
     },
     {
@@ -62,7 +64,7 @@ const Blog = () => {
       date: "2025-09-16",
       category: "Performans",
       tags: ["hız", "performans", "optimizasyon", "yükleme", "kullanıcı deneyimi"],
-      readTime: "9 dakika",
+      readTime: "13 dakika",
       image: "/assets/blog/web-sitesi-hizi.jpg"
     },
     {
@@ -74,23 +76,30 @@ const Blog = () => {
       date: "2025-09-15",
       category: "Kurumsal",
       tags: ["kurumsal", "profesyonel", "marka", "güven", "kimlik"],
-      readTime: "6 dakika",
+      readTime: "12 dakika",
       image: "/assets/blog/kurumsal-tasarim.jpg"
     }
   ];
 
   return (
     <div className="blog-page">
+      <SEO 
+        title="Web Tasarım ve Geliştirme Blogu"
+        description="Web tasarım, e-ticaret, SEO ve dijital pazarlama konularında uzman içerikler. Barış Can Yönel'in web tasarım blogu."
+        keywords="web tasarım blog, web sitesi oluşturma, seo blog, e-ticaret blog, dijital pazarlama, web geliştirme, barış can yönel"
+        canonical="/blog"
+      />
+      
       {/* SEO Optimized Header */}
       <header className="blog-header">
         <div className="container">
-          <h1 className="blog-title">Web Tasarım ve Geliştirme Blogu</h1>
+          <h1 className="blog-title">{t('blog.pageTitle')}</h1>
           <p className="blog-subtitle">
-            Web tasarım, e-ticaret, SEO ve dijital pazarlama konularında uzman içerikler
+            {t('blog.pageSubtitle')}
           </p>
           <div className="blog-meta">
-            <span className="blog-author">Barış Can Yönel</span>
-            <span className="blog-date">Son güncelleme: 20 Eylül 2025</span>
+            <span className="blog-author">{t('blog.author')}</span>
+            <span className="blog-date">{t('blog.lastUpdate')}</span>
           </div>
         </div>
       </header>
@@ -112,7 +121,7 @@ const Blog = () => {
                 
                 <div className="blog-post-content">
                   <h2 className="blog-post-title">
-                    <a href={`/blog/${post.slug}`}>{post.title}</a>
+                    <Link to={`/blog/${post.slug}`}>{post.title}</Link>
                   </h2>
                   
                   <p className="blog-post-excerpt">{post.excerpt}</p>
@@ -128,9 +137,9 @@ const Blog = () => {
                     ))}
                   </div>
                   
-                  <a href={`/blog/${post.slug}`} className="blog-read-more">
-                    Devamını Oku →
-                  </a>
+                  <Link to={`/blog/${post.slug}`} className="blog-read-more">
+                    {t('blog.readMore')}
+                  </Link>
                 </div>
               </article>
             ))}
@@ -142,15 +151,14 @@ const Blog = () => {
       <footer className="blog-footer">
         <div className="container">
           <div className="blog-footer-content">
-            <h3>Web Tasarım Hizmetleri</h3>
+            <h3>{t('blog.footerTitle')}</h3>
             <p>
-              Profesyonel web tasarım, e-ticaret sitesi geliştirme, SEO optimizasyonu 
-              ve dijital pazarlama hizmetleri için iletişime geçin.
+              {t('blog.footerSubtitle')}
             </p>
             <div className="blog-footer-links">
-              <a href="/">Ana Sayfa</a>
-              <a href="/#projects">Projeler</a>
-              <a href="/#contact">İletişim</a>
+              <a href="/">{t('blog.footerHome')}</a>
+              <a href="/#projects">{t('blog.footerProjects')}</a>
+              <a href="/#contact">{t('blog.footerContact')}</a>
             </div>
           </div>
         </div>

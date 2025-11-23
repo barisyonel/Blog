@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import FAQSchema from '../components/FAQSchema';
 import '../styles/About.css';
 
 const About = () => {
@@ -9,8 +10,36 @@ const About = () => {
   const services_list = t('about.services_list', { returnObjects: true });
   const reasons = t('about.reasons', { returnObjects: true });
 
+  const faqs = [
+    {
+      question: "Internet sitesi oluşturma süresi ne kadar?",
+      answer: "Internet sitesi oluşturma süresi, projenin kapsamına göre değişmektedir. Basit kurumsal siteler için 7-14 gün, e-ticaret siteleri için 3-4 hafta sürmektedir. Detaylı bilgi için iletişime geçebilirsiniz."
+    },
+    {
+      question: "Web sitesi oluşturma fiyatları ne kadar?",
+      answer: "Web sitesi oluşturma fiyatları, ihtiyaçlarınıza göre belirlenmektedir. Profesyonel web sitesi tasarımı, e-ticaret sitesi, responsive tasarım ve SEO optimizasyonu dahil paketlerimiz mevcuttur. Ücretsiz teklif almak için iletişime geçebilirsiniz."
+    },
+    {
+      question: "Internet sitesi oluşturduktan sonra güncelleme yapabilir miyim?",
+      answer: "Evet, admin paneli ile web sitenizi kolayca güncelleyebilirsiniz. Ayrıca web sitesi bakım hizmetimiz ile düzenli güncellemeler, güvenlik yamaları ve teknik destek sağlıyoruz."
+    },
+    {
+      question: "Responsive web tasarım nedir?",
+      answer: "Responsive web tasarım, web sitenizin tüm cihazlarda (mobil, tablet, masaüstü) mükemmel görünmesini sağlayan tasarım yaklaşımıdır. Google'ın mobil öncelikli indeksleme politikası nedeniyle responsive tasarım artık zorunluluk haline gelmiştir."
+    },
+    {
+      question: "SEO optimizasyonu dahil mi?",
+      answer: "Evet, tüm web sitelerimizde temel SEO optimizasyonu dahildir. Meta tag optimizasyonu, hızlı yükleme, mobil uyumluluk, structured data (Schema.org) ve sitemap.xml gibi SEO teknikleri uygulanmaktadır."
+    },
+    {
+      question: "E-ticaret sitesi için ödeme sistemi entegrasyonu yapılıyor mu?",
+      answer: "Evet, e-ticaret sitelerinde güvenli ödeme sistemleri entegre ediyoruz. İyzico, PayTR, Stripe gibi ödeme gateway'leri ile entegrasyon yapılmaktadır."
+    }
+  ];
+
   return (
     <section id="about" className="about">
+      <FAQSchema faqs={faqs} />
       <div className="about-container">
         <h1 className="greeting" data-aos="fade-up">
           {t('about.greeting')}, <span className="name">Barış Can Yönel</span>

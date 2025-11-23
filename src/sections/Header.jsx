@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+import SEO from "../components/SEO";
 import "../styles/Header.css";
 import { FaLaptopCode, FaMobileAlt, FaSearch, FaRocket, FaTools } from "react-icons/fa";
 import slider1 from "../assets/slider1.jpg";
@@ -20,6 +21,12 @@ const Header = () => {
 
   return (
     <section id="header" className="header">
+      <SEO 
+        title="Internet Sitesi Oluşturma | Profesyonel Web Sitesi Tasarımı - Barış Can Yönel"
+        description="Internet sitesi oluşturma konusunda uzman. Profesyonel web sitesi tasarımı, e-ticaret sitesi, responsive tasarım, SEO optimizasyonu ve admin paneli hizmetleri. Modern, kullanıcı dostu ve Google'da üst sıralarda yer alan web siteleri."
+        keywords="internet sitesi oluşturma, web sitesi oluşturma, web sitesi yapımı, profesyonel web tasarım, e-ticaret sitesi, kurumsal web sitesi, responsive tasarım, seo optimizasyonu, admin paneli, barış can yönel"
+        canonical="/"
+      />
       <div className="header-content">
         <div className="header-seo-content">
           <h1 className="header-main-title">
@@ -61,7 +68,7 @@ const Header = () => {
           ))}
         </div>
         
-        <a href="#contact" className="header-cta" aria-label="Ücretsiz teklif almak için iletişime geçin">
+        <a href="/#contact" className="header-cta" aria-label="Ücretsiz teklif almak için iletişime geçin">
           {t('header.cta')}
         </a>
       </div>

@@ -14,41 +14,49 @@ import restaurantImg from "../assets/projects/restaurant-menu.jpg";
 import newsImg from "../assets/projects/news.jpg";
   import izmakImg from "../assets/projects/sos-multiplayer.jpg";
 import beautyImg from "../assets/projects/beauty-saloon.jpg";
+import balsanImg from "../assets/projects/balsan.png";
+import integralImg from "../assets/projects/integral.png";
 
 const projectImages = {
-  1: mygoldenImg,
-  2: yonelImg,
-  3: polatImg,
-  4: izmakImg,
-  5: lezzetImg,
-  6: restaurantImg,
-  7: newsImg,
-  8: sigortaImg,
-  9: beautyImg,
+  1: integralImg,
+  2: balsanImg,
+  3: mygoldenImg,
+  4: yonelImg,
+  5: polatImg,
+  6: izmakImg,
+  7: lezzetImg,
+  8: restaurantImg,
+  9: newsImg,
+  10: sigortaImg,
+  11: beautyImg,
 };
 
 const projectLinks = {
-  1: { github: "https://github.com/barisyonel/mygoldenfood", demo: "https://mygoldenfood.com/" },
-  2: { github: "https://github.com/barisyonel/YonelTicaret", demo: "yonel.netlify.app" },
-  3: { github: "https://github.com/barisyonel/polat-mermer-designs", demo: "polatmermer.com" },
-  4: { github: "https://github.com/barisyonel/izmak", demo: "https://izmirmakinakalip.com" },
-  5: { github: "https://github.com/barisyonel/lezzet-tarifleri", demo: "" },
-  6: { github: "https://github.com/barisyonel/restaurant-menu", demo: "" },
-  7: { github: "https://github.com/barisyonel/news-app", demo: "" },
-  8: { github: "https://github.com/barisyonel/sigorta-acentesi", demo: "" },
-  9: { github: "https://github.com/barisyonel/beauty-saloon", demo: "" },
+  1: { github: "https://github.com/barisyonel/integral1", demo: "https://integral1-theta.vercel.app/" },
+  2: { github: "https://github.com/barisyonel/balsann", demo: "https://www.balsanpapel.com/" },
+  3: { github: "https://github.com/barisyonel/mygoldenfood", demo: "https://mygoldenfood.com/" },
+  4: { github: "https://github.com/barisyonel/YonelTicaret", demo: "yonel.netlify.app" },
+  5: { github: "https://github.com/barisyonel/polat-mermer-designs", demo: "polatmermer.com" },
+  6: { github: "https://github.com/barisyonel/izmak", demo: "https://izmirmakinakalip.com" },
+  7: { github: "https://github.com/barisyonel/lezzet-tarifleri", demo: "" },
+  8: { github: "https://github.com/barisyonel/restaurant-menu", demo: "" },
+  9: { github: "https://github.com/barisyonel/news-app", demo: "" },
+  10: { github: "https://github.com/barisyonel/sigorta-acentesi", demo: "" },
+  11: { github: "https://github.com/barisyonel/beauty-saloon", demo: "" },
 };
 
 const projectTech = {
-  1: ["HTML", "CSS", "JavaScript", "C#", "ASP.NET Core", ".NET"],
-  2: ["Next.js", "React", "Tailwind CSS", "Node.js", "Express.js", "mongoDb", "TypeScript", "Framer Motion"],
-  3: ["React.js", "Material-UI", "Framer Motion", "Node.js", "Express.js", "TypeScript", "Framer Motion"],
-  4: ["React", "Node.js", "Express.js", "MongoDB", "JWT", "Mongoose", "Netlify", "Railway"],
-  5: ["React", "Firebase", "Material-UI", "Express.js"],
-  6: ["React", "Redux", "Node.js", "MongoDB"],
-  7: ["Next.js", "Tailwind CSS", "NewsAPI", "TypeScript"],
-  8: ["React", "Next.js", "Tailwind CSS", "Node.js"],
-  9: ["React", "Styled Components", "Framer Motion"],
+  1: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Node.js", "MongoDB", "Express.js"],
+  2: ["React", "Next.js", "TypeScript", "Node.js", "MongoDB", "Express.js"],
+  3: ["HTML", "CSS", "JavaScript", "C#", "ASP.NET Core", ".NET"],
+  4: ["Next.js", "React", "Tailwind CSS", "Node.js", "Express.js", "mongoDb", "TypeScript", "Framer Motion"],
+  5: ["React.js", "Material-UI", "Framer Motion", "Node.js", "Express.js", "TypeScript", "Framer Motion"],
+  6: ["React", "Node.js", "Express.js", "MongoDB", "JWT", "Mongoose", "Netlify", "Railway"],
+  7: ["React", "Firebase", "Material-UI", "Express.js"],
+  8: ["React", "Redux", "Node.js", "MongoDB"],
+  9: ["Next.js", "Tailwind CSS", "NewsAPI", "TypeScript"],
+  10: ["React", "Next.js", "Tailwind CSS", "Node.js"],
+  11: ["React", "Styled Components", "Framer Motion"],
 };
 
 
@@ -98,7 +106,7 @@ const Projects = () => {
             <div className="project-image-container">
                 <img 
                   src={projectImages[project.id]} 
-                  alt={`${project.title} - CODE AFTER projesi`} 
+                  alt={`${project.title} - Barış Can Yönel referans projesi`} 
                   className="project-image"
                 />
                 <div className={`project-overlay ${hoveredId === project.id ? 'active' : ''}`}>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin, faInstagram, faMedium } from "@fortawesome/free-brands-svg-icons";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
@@ -7,8 +8,28 @@ import "../styles/Navbar.css";
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
+  const location = useLocation();
+  const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+
+  // Handle navigation with hash
+  const handleNavClick = (e, hash) => {
+    e.preventDefault();
+    closeMenu();
+    
+    // If we're on home page, just scroll
+    if (location.pathname === '/') {
+      const element = document.querySelector(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } else {
+      // If we're on a different page, navigate to home with hash
+      const hashValue = hash.replace('#', '');
+      navigate(`/#${hashValue}`, { replace: false });
+    }
+  };
 
   // Scroll event listener
   useEffect(() => {
@@ -63,7 +84,13 @@ const Navbar = () => {
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
         <div className="nav-logo">
-          <img src="/logo.jpg" alt="Logo" className="logo-image" />
+          <a href="/" onClick={(e) => {
+            e.preventDefault();
+            navigate('/');
+            closeMenu();
+          }} style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+            <img src="/logo.jpg" alt="Logo" className="logo-image" />
+          </a>
           <button className="language-toggle-btn desktop-only" onClick={toggleLanguage} aria-label="Dili değiştir">
             {i18n.language === 'tr' ? 'TR' : 'EN'}
           </button>
@@ -86,19 +113,22 @@ const Navbar = () => {
             </button>
           </div>
           <div className="nav-menu-items">
-            <a href="#header" onClick={closeMenu} className="nav-link nav-link-gap">
+            <a href="#header" onClick={(e) => handleNavClick(e, '#header')} className="nav-link nav-link-gap">
               <span className="nav-link-text">{t("nav.home")}</span>
             </a>
-            <a href="#about" onClick={closeMenu} className="nav-link nav-link-gap">
+            <a href="#about" onClick={(e) => handleNavClick(e, '#about')} className="nav-link nav-link-gap">
               <span className="nav-link-text">{t("nav.about")}</span>
             </a>
-            <a href="#projects" onClick={closeMenu} className="nav-link nav-link-gap">
+            <a href="#projects" onClick={(e) => handleNavClick(e, '#projects')} className="nav-link nav-link-gap">
               <span className="nav-link-text">{t("nav.projects")}</span>
             </a>
-            <a href="#education" onClick={closeMenu} className="nav-link nav-link-gap">
+            <a href="/hizmetler" onClick={closeMenu} className="nav-link nav-link-gap">
+              <span className="nav-link-text">{t("nav.services")}</span>
+            </a>
+            <a href="#education" onClick={(e) => handleNavClick(e, '#education')} className="nav-link nav-link-gap">
               <span className="nav-link-text">{t("nav.education")}</span>
             </a>
-            <a href="#contact" onClick={closeMenu} className="nav-link nav-link-gap">
+            <a href="#contact" onClick={(e) => handleNavClick(e, '#contact')} className="nav-link nav-link-gap">
               <span className="nav-link-text">{t("nav.contact")}</span>
             </a>
           </div>

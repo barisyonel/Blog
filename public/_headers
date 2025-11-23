@@ -5,6 +5,8 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  X-Forwarded-Proto: https
+  X-Forwarded-Ssl: on
 
 /index.html
   Cache-Control: public, max-age=0, must-revalidate

@@ -2,7 +2,15 @@
   command = "npm run build"
   publish = "dist"
 
-# HTTPS yönlendirmesi
+# SSL/TLS yapılandırması
+[build.environment]
+  NODE_VERSION = "18"
+
+# Domain yapılandırması
+[context.production]
+  command = "npm run build"
+
+# HTTPS yönlendirmesi - Tüm HTTP trafiğini HTTPS'ye yönlendir
 [[redirects]]
   from = "http://bariscanyonel.com/*"
   to = "https://bariscanyonel.com/:splat"
@@ -21,17 +29,24 @@
   status = 301
   force = true
 
+# Tüm HTTP isteklerini HTTPS'ye yönlendir (genel kural)
+[[redirects]]
+  from = "http://*"
+  to = "https://:splat"
+  status = 301
+  force = true
+
 # SPA routing için
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
 
-# Güvenlik başlıkları
+# Güvenlik başlıkları - SSL/TLS için optimize edilmiş
 [[headers]]
   for = "/*"
   [headers.values]
-    # HTTPS zorunluluğu (2 yıl)
+    # HTTPS zorunluluğu (2 yıl) - HSTS preload için
     Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
     # Clickjacking koruması
     X-Frame-Options = "DENY"
@@ -45,6 +60,9 @@
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
     # Content Security Policy
     Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://formspree.io; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formspree.io https://wa.me; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://formspree.io;"
+    # SSL/TLS için ek güvenlik
+    X-Forwarded-Proto = "https"
+    X-Forwarded-Ssl = "on"
 
 # Static dosyalar için cache ayarları
 [[headers]]
