@@ -11,7 +11,8 @@
     "security-audit": "npm audit --audit-level moderate",
     "security-fix": "npm audit fix",
     "build:prod": "NODE_ENV=production vite build",
-    "deploy": "npm run build:prod && netlify deploy --prod"
+    "deploy": "npm run build:prod && netlify deploy --prod",
+    "deploy:vercel": "npm run build:prod && vercel --prod"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
