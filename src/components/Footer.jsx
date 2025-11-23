@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faLinkedin, faGithub, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
@@ -8,6 +9,8 @@ import "../styles/Footer.css";
 
 const Footer = () => {
   const { t } = useTranslation();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -20,6 +23,23 @@ const Footer = () => {
     window.open('https://wa.me/905301129440', '_blank');
   };
 
+  // Handle footer navigation with hash
+  const handleFooterNavClick = (e, hash) => {
+    e.preventDefault();
+    
+    // If we're on home page, just scroll
+    if (location.pathname === '/') {
+      const element = document.querySelector(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } else {
+      // If we're on a different page, navigate to home with hash
+      const hashValue = hash.replace('#', '');
+      navigate(`/#${hashValue}`, { replace: false });
+    }
+  };
+
   return (
     <footer className="footer">
       <div className="footer-container">
@@ -30,11 +50,11 @@ const Footer = () => {
           </div>
           
           <nav className="footer-nav">
-            <a href="#header">{t('nav.home')}</a>
-            <a href="#about">{t('nav.about')}</a>
-            <a href="#projects">{t('nav.projects')}</a>
-            <a href="#education">{t('nav.education')}</a>
-            <a href="#contact">{t('nav.contact')}</a>
+            <a href="#header" onClick={(e) => handleFooterNavClick(e, '#header')}>{t('nav.home')}</a>
+            <a href="#about" onClick={(e) => handleFooterNavClick(e, '#about')}>{t('nav.about')}</a>
+            <a href="#projects" onClick={(e) => handleFooterNavClick(e, '#projects')}>{t('nav.projects')}</a>
+            <a href="#education" onClick={(e) => handleFooterNavClick(e, '#education')}>{t('nav.education')}</a>
+            <a href="#contact" onClick={(e) => handleFooterNavClick(e, '#contact')}>{t('nav.contact')}</a>
           </nav>
 
           <div className="social-links">
